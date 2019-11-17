@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+brooklyn:
+  name: Brooklyn
+  breed: pit_bull
+
+bronx:
+  name: Bronx
+  breed_id: pit_bull
+
+brownie:
+  name: Brownie
+  breed_id: pit_bull
+  sire: bronx
+  dam: brooklyn

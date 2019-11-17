@@ -16,6 +16,7 @@ development:
 test:
   <<: *default
   password: password
+  database: christies_test
 
 production:
   <<: *default
