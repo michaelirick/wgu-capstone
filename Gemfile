@@ -68,6 +68,7 @@ gem 'activeadmin'
 gem 'active_admin_import'
 gem 'cancancan'
 gem 'pg'
+gem 'rails-erd'
 gem 'bootstrap-sass', '~> 3.4.1'
 gem 'sassc-rails', '>= 2.1.0'
 group :development do
