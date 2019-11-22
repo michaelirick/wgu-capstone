@@ -10,6 +10,7 @@ class Animal < ApplicationRecord
   scope :with_breed, ->(b) { where breed: b }
 
   validates_presence_of :sex
+  validates_presence_of :name
 
   SEXES = %i[male female].freeze
 
