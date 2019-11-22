@@ -2,10 +2,12 @@
 
 # Development
 
-This README assumes that you have a PostgreSQL server and Ruby installed. If you do not have these setup, the following guides should be helpful:
+This README assumes that you have a PostgreSQL server, Ruby, NPM, and Yarn installed. If you do not have these setup, the following guides should be helpful:
 
 * https://www.postgresql.org/download/
 * https://www.ruby-lang.org/en/documentation/installation/
+* https://nodejs.org/en/download/
+* https://yarnpkg.com/lang/en/docs/cli/install/
 
 It is also assumed that you know how to use a Linux (or other POSIX compliant OS). This application was developed on and for Ubuntu 18.04 LTS. If you are not using Ubuntu, then you may run into difficulties.
 
@@ -20,6 +22,12 @@ Install Ruby gems via bundler:
 ```bash
 cd christies-companions
 bundle install
+```
+
+Install Javascript packages via yarn:
+
+```bash
+yarn install
 ```
 
 Copy the database example file and update with credentials:
