@@ -48,8 +48,10 @@ class AnimalProfile < HyperComponent
 
       CollapsePanel(collapse: true, heading_text: 'Records', heading_tag: :H4) do
         DIV(class: :catalogue) do
-          animal.records.map(&:image_file).each do |image|
-            IMG(src: image)
+          animal.records.each do |record|
+            Panel(heading_tag: :H5, heading_text: "[#{record.record_type}] #{record.title}") do
+              IMG(src: record.image_file)
+            end
           end
         end
       end unless animal.records.empty?
