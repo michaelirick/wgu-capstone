@@ -22,13 +22,13 @@ class AnimalCard < HyperComponent
           end
           TR do
             TD { 'Sire:' }
-            TD { animal.sire.name }.on(:click) do |event|
+            TD(class: 'btn-link') { animal.sire.name }.on(:click) do |event|
               parent.select_animal animal.sire
             end
           end if animal.sire.present?
           TR do
             TD { 'Dam:' }
-            TD { animal.dam.name }.on(:click) do |event|
+            TD(class: 'btn-link') { animal.dam.name }.on(:click) do |event|
               parent.select_animal animal.dam
             end
           end if animal.dam.present?

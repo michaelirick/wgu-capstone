@@ -26,13 +26,13 @@ class AnimalProfile < HyperComponent
           end
           TR do
             TD { 'Sire:' }
-            TD { animal.sire.name }.on(:click) do |event|
+            TD(class: 'btn-link') { animal.sire.name }.on(:click) do |event|
               parent.select_animal animal.sire
             end
           end if animal.sire.present?
           TR do
             TD { 'Dam:' }
-            TD { animal.dam.name }.on(:click) do |event|
+            TD(class: 'btn-link') { animal.dam.name }.on(:click) do |event|
               parent.select_animal animal.dam
             end
           end if animal.dam.present?
@@ -40,6 +40,14 @@ class AnimalProfile < HyperComponent
       end
       CollapsePanel(collapse: true, heading_text: 'Images', heading_tag: :H4)
       CollapsePanel(collapse: true, heading_text: 'Records', heading_tag: :H4)
+      CollapsePanel(collapse: true, heading_text: 'Progeny', heading_tag: :H4) do
+        progeny = animal.male? ? animal.progeny_by : animal.progeny_from
+        DIV(class: 'catalogue') do
+          progeny.each do |child|
+            AnimalCard(animal: child, parent: parent)
+          end
+        end
+      end
     end
   end
 end

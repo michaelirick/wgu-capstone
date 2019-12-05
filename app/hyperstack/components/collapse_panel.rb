@@ -8,7 +8,7 @@ class CollapsePanel < HyperComponent
   end
 
   def glyphicon
-    @collapse ? 'remove' : 'left-arrow'
+    @collapse ? 'chevron-left' : :remove
   end
 
   render(DIV, class: 'panel panel-default') do
@@ -21,7 +21,7 @@ class CollapsePanel < HyperComponent
       end
     end
     DIV(class: 'panel-body') do
-      @children
+      children.render
     end unless @collapse
   end
 end

@@ -12,7 +12,9 @@
  *
  *= require_tree .
  *= require_self
- */  @import "bootstrap";
+ */
+ @import "bootstrap";
+ @import "glyphicons";
 
 .page-body {
 
@@ -23,6 +25,10 @@
 
 .hyperjunt-tab {
   //border-radius: 5px;
+}
+
+.hyperjunt-link {
+  cursor: pointer;
 }
 
 .white-background {
