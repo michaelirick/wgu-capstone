@@ -38,16 +38,30 @@ class AnimalProfile < HyperComponent
           end if animal.dam.present?
         end
       end
-      CollapsePanel(collapse: true, heading_text: 'Images', heading_tag: :H4)
-      CollapsePanel(collapse: true, heading_text: 'Records', heading_tag: :H4)
+      CollapsePanel(collapse: true, heading_text: 'Images', heading_tag: :H4) do
+        DIV(class: :catalogue) do
+          animal.image_files.each do |image|
+            IMG(src: image)
+          end
+        end
+      end unless animal.image_files.empty?
+
+      CollapsePanel(collapse: true, heading_text: 'Records', heading_tag: :H4) do
+        DIV(class: :catalogue) do
+          animal.records.map(&:image_file).each do |image|
+            IMG(src: image)
+          end
+        end
+      end unless animal.records.empty?
+
+      progeny = animal.male? ? animal.progeny_by : animal.progeny_from
       CollapsePanel(collapse: true, heading_text: 'Progeny', heading_tag: :H4) do
-        progeny = animal.male? ? animal.progeny_by : animal.progeny_from
         DIV(class: 'catalogue') do
           progeny.each do |child|
             AnimalCard(animal: child, parent: parent)
           end
         end
-      end
+      end unless progeny.empty?
     end
   end
 end

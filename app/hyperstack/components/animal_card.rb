@@ -4,7 +4,7 @@ class AnimalCard < HyperComponent
 
   render(DIV, class: 'animal-card panel panel-default') do
     DIV(class: 'panel-heading') {
-      H3 { animal.name }.on(:click) do |event|
+      H3(class: 'btn-link') { animal.name }.on(:click) do |event|
         parent.select_animal animal
       end
     }

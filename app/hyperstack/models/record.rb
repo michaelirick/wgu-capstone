@@ -4,10 +4,9 @@ class Record < ApplicationRecord
   has_one_attached :image unless RUBY_ENGINE == 'opal'
 
   server_method :image_file do
-    unless images.nil?
-      image = images.attachment
+    unless image.attachment.nil?
       Rails.application.routes.url_helpers.rails_blob_path(
-        image, disposition: "attachment", only_path: true
+        image.attachment, disposition: "attachment", only_path: true
       )
     end
   end
