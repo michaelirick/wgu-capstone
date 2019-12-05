@@ -2,6 +2,11 @@ class Catalogue < HyperComponent
   before_mount do
     @selected = nil
     @tab = :about
+    @animals = []
+  end
+
+  after_mount do
+    mutate @animals = Animal.all
   end
 
   def select_animal(animal)
@@ -11,10 +16,6 @@ class Catalogue < HyperComponent
 
   def remove_selected
     mutate @selected = nil
-  end
-
-  def search(event)
-    puts event.target.value
   end
 
   def tab_class(tab)
@@ -44,14 +45,13 @@ class Catalogue < HyperComponent
         P { 'About us here' }
       end
       if @tab == :catalogue
-        DIV(class: 'form-group') do
-          INPUT(class: 'form-control', placeholder: 'Search...').on(:change) do |event|
-            search event
-          end
-        end
         DIV(class: 'catalogue') do
-          Animal.all.each do |animal|
-            AnimalCard(animal: animal, parent: self)
+          @animals.each do |animal|
+            if loading?
+              'Loading...'
+            else
+              AnimalCard(animal: animal, parent: self)
+            end
           end
         end
       end

@@ -32,6 +32,18 @@ class AnimalCard < HyperComponent
               parent.select_animal animal.dam
             end
           end if animal.dam.present?
+          TR do
+            TD { 'Images:' }
+            TD do
+              SPAN(class: 'badge') { animal.image_files.length.to_s }
+            end
+          end
+          TR do
+            TD { 'Records:' }
+            TD do
+              SPAN(class: 'badge') { animal.records.length.to_s }
+            end
+          end
         end
       end
     }

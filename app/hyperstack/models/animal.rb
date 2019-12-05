@@ -33,6 +33,7 @@ class Animal < ApplicationRecord
   end
 
   scope :with_breed, ->(b) { where breed: b }
+  scope :filter, ->(data) { where data }
 
   validates_presence_of :sex
   validates_presence_of :name
