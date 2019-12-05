@@ -9,7 +9,7 @@ class AnimalCard < HyperComponent
       end
     }
     DIV(class: 'panel-body') {
-      IMG(src: animal.profile_image_file)
+      IMG(class: 'pull-right', src: animal.profile_image_file)
       TABLE do
         TBODY do
           TR do
