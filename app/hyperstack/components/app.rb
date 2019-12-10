@@ -19,7 +19,7 @@ class App < HyperComponent
     NAV(class: 'navbar navbar-default') do
       DIV(class: 'container-fluid') do
         DIV(class: 'navbar-header') do
-          A(class: 'navbar-brand', href: '#') { 'Hyperjunt' }
+          A(class: 'navbar-brand', href: '#') { "Christie's Companions" }
         end
         UL(class: 'nav navbar-nav navbar-right') do
           LI do
@@ -28,6 +28,8 @@ class App < HyperComponent
         end
       end
     end
-    'Your content here!'
+    DIV(class: :container) do
+      Catalogue {}
+    end
   end
 end

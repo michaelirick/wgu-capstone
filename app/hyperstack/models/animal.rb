@@ -5,7 +5,22 @@ class Animal < ApplicationRecord
   has_many :progeny_by, foreign_key: :sire_id, class_name: 'Animal'
   has_many :progeny_from, foreign_key: :dam_id, class_name: 'Animal'
   has_many :records
-  has_many_attached :images
+  has_many_attached :images unless RUBY_ENGINE == 'opal'
+
+  server_method :image_files do
+    images.attachments.map do |image|
+      Rails.application.routes.url_helpers.rails_blob_path(
+        image, disposition: "attachment", only_path: true
+      )
+    end
+  end
+
+  server_method :profile_image_file do
+    image = images.attachments.first
+    Rails.application.routes.url_helpers.rails_blob_path(
+      image, disposition: "attachment", only_path: true
+    )
+  end
 
   scope :with_breed, ->(b) { where breed: b }
 
