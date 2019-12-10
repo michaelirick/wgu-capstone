@@ -14,6 +14,21 @@
  *= require_self
  */  @import "bootstrap";
 
+.page-body {
+
+  //background-image: url('dogs.jpeg');
+  //background-color: white;
+
+}
+
+.hyperjunt-tab {
+  //border-radius: 5px;
+}
+
+.white-background {
+  //background-color: white;
+}
+
 .catalogue {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));

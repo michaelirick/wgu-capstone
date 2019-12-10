@@ -25,21 +25,21 @@ class Catalogue < HyperComponent
     mutate @tab = tab
   end
 
-  render(DIV) do
+  render(DIV, class: '') do
     UL(class: 'nav nav-tabs') do
       {
         about: 'About',
         catalogue: 'Catalogue',
         profile: 'Profile'
       }.each do |k, v|
-        LI(role: :presentation, class: tab_class(k)) do
+        LI(role: :presentation, class: "#{tab_class(k)} white-background hyperjunt-tab") do
           A {v}
         end.on(:click) do |event|
           set_tab k
         end
       end
     end
-    DIV(class: 'tab-content') do
+    DIV(class: 'tab-content white-background panel-body') do
       if @tab == :about
         P { 'About us here' }
       end
