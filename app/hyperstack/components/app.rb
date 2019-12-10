@@ -7,6 +7,7 @@
 
 class App < HyperComponent
   include Hyperstack::Router
+  include Hyperstack::Router::Helpers
 
   # define routes using the Route psuedo component.  Examples:
   # Route('/foo', mounts: Foo)                : match the path beginning with /foo and mount component Foo here
@@ -19,7 +20,7 @@ class App < HyperComponent
     NAV(class: 'navbar navbar-default') do
       DIV(class: 'container-fluid') do
         DIV(class: 'navbar-header') do
-          A(class: 'navbar-brand', href: '#') { "Christie's Companions" }
+          A(class: 'navbar-brand', href: '/') { "Christie's Companions" }
         end
         UL(class: 'nav navbar-nav navbar-right') do
           LI do

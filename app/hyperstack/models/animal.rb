@@ -12,14 +12,14 @@ class Animal < ApplicationRecord
       Rails.application.routes.url_helpers.rails_blob_path(
         image, disposition: "attachment", only_path: true
       )
-    end
+    end unless images.nil?
   end
 
   server_method :profile_image_file do
     image = images.attachments.first
     Rails.application.routes.url_helpers.rails_blob_path(
       image, disposition: "attachment", only_path: true
-    )
+    ) unless image.nil?
   end
 
   scope :with_breed, ->(b) { where breed: b }
