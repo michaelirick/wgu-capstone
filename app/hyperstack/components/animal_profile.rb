@@ -13,7 +13,7 @@ class AnimalProfile < HyperComponent
       }
     end
     DIV(class: 'panel-body') do
-      IMG(class: 'pull-right', src: animal.profile_image_file)
+      IMG(src: animal.profile_image_file)
       TABLE do
         TBODY do
           TR do
