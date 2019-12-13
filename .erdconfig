@@ -1,0 +1,5 @@
+orientation: vertical
+disconnected: false
+filename: docs/erd
+filetype: dot
+only: "Animal,Breed,Record,User,DashboardMessage"
