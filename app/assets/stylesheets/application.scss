@@ -12,5 +12,31 @@
  *
  *= require_tree .
  *= require_self
- */  @import "bootstrap";
+ */
+ @import "bootstrap";
+ @import "glyphicons";
 
+.page-body {
+
+  //background-image: url('dogs.jpeg');
+  //background-color: white;
+
+}
+
+.hyperjunt-tab {
+  //border-radius: 5px;
+}
+
+.hyperjunt-link {
+  cursor: pointer;
+}
+
+.white-background {
+  //background-color: white;
+}
+
+.catalogue {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-gap: 1rem;
+}

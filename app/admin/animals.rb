@@ -1,5 +1,5 @@
 ActiveAdmin.register Animal do
-  permit_params :name, :sex, :sire_id, :dam_id, :breed_id, images: []
+  permit_params :name, :sex, :sire_id, :dam_id, :breed_id, :profile_image, images: []
 
   index do
     selectable_column
@@ -26,6 +26,7 @@ ActiveAdmin.register Animal do
       f.input :sire, as: :select, collection: Animal.males
       f.input :dam, as: :select, collection: Animal.females
       f.input :breed
+      f.input :profile_image, as: :file
       f.input :images, as: :file, input_html: { multiple: true }
     end
     f.actions
@@ -44,6 +45,9 @@ ActiveAdmin.register Animal do
         row :progeny_from
       end
       row :records
+      row :profile_image do |a|
+        a.profile_image.attachment.nil? ? '' : image_tag(url_for(a.profile_image))
+      end
       row :images do |a|
         a.images.map do |i|
           image_tag url_for(i)
