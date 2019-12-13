@@ -5,3 +5,7 @@ import ReactDOM from 'react-dom';
 // to the global space, otherwise webpack will encapsulate them locally here
 global.React = React;
 global.ReactDOM = ReactDOM;
+import $ from 'jquery';
+window.jQuery = $;
+window.$ = $;
+//import * from 'bootstrap'

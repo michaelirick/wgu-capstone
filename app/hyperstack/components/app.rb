@@ -24,7 +24,7 @@ class App < HyperComponent
         end
         UL(class: 'nav navbar-nav navbar-right') do
           LI do
-            A(href: 'admin') { 'Admin' }
+            A(href: 'admin', class: 'admin-link') { 'Admin' }
           end
         end
       end
