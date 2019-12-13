@@ -42,7 +42,9 @@ class Catalogue < HyperComponent
     end
     DIV(class: 'tab-content white-background panel-body') do
       if @tab == :about
-        P { 'About us here' }
+        DashboardMessage.by_priority.each do |message|
+          P { message.message }
+        end
       end
       if @tab == :catalogue
         DIV(class: 'catalogue') do
