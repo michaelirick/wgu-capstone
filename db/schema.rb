@@ -74,19 +74,6 @@ ActiveRecord::Schema.define(version: 2019_12_13_175441) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "hyperstack_connections", force: :cascade do |t|
-    t.string "channel"
-    t.string "session"
-    t.datetime "created_at"
-    t.datetime "expires_at"
-    t.datetime "refresh_at"
-  end
-
-  create_table "hyperstack_queued_messages", force: :cascade do |t|
-    t.text "data"
-    t.integer "connection_id"
-  end
-
   create_table "records", force: :cascade do |t|
     t.string "record_type"
     t.string "title"
