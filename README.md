@@ -58,5 +58,3 @@ To run the test suite:
 ```bash
 bundle exec rails test test/system
 ```
-
-This application uses Cypress (https://www.cypress.io/) for testing.
