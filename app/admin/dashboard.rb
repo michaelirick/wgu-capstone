@@ -29,4 +29,4 @@ ActiveAdmin.register_page "Dashboard" do
     #   end
     # end
   end # content
-end
+end unless ENV['migrate'] == '1'

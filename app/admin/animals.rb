@@ -56,4 +56,4 @@ ActiveAdmin.register Animal do
     end
     active_admin_comments
   end
-end
+end unless ENV['migrate'] == '1'

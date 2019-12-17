@@ -25,4 +25,4 @@ ActiveAdmin.register User do
     f.actions
   end
 
-end
+end unless ENV['migrate'] == '1'
