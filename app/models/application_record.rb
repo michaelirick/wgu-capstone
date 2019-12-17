@@ -4,3 +4,7 @@
 
 # BH - I am not sure this is right
 # require 'models/application_record.rb'
+class ApplicationRecord < ActiveRecord::Base
+  self.abstract_class = true
+  regulate_scope all: true
+end if Rails.env.production?
