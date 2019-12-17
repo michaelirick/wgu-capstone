@@ -12,6 +12,6 @@ class Hyperstack::ApplicationPolicy
   # allow remote access to all scopes - i.e. you can count or get a list of ids
   # for any scope or relationship
   ApplicationRecord.regulate_scope :all
-end unless Rails.env.production?
+end #unless Rails.env.production?
 # don't forget to provide a policy before production...
-::Rails.logger.debug("WARNING: You need to define a Hyperstack policy for production") if Rails.env.production?
+#::Rails.logger.debug("WARNING: You need to define a Hyperstack policy for production") if Rails.env.production?
