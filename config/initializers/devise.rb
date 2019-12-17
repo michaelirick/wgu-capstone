@@ -297,3 +297,4 @@ Devise.setup do |config|
   # changed. Defaults to true, so a user is signed in automatically after changing a password.
   # config.sign_in_after_change_password = true
 end
+Rails.application.config.secret_key_base = 'cae6f2acc3974a3215d335476a85a923bae454b62d78c768c9b58067be2080ca472950add23baf8e39d0748f3fa80bcf80c8cefa8d8b9b343725d431b1b62ca6'
