@@ -13,7 +13,7 @@ class AnimalProfile < HyperComponent
       }
     end
     DIV(class: 'panel-body') do
-      IMG(src: animal.profile_image_file)
+      IMG(class: 'image-file', src: animal.profile_image_file)
       TABLE do
         TBODY do
           TR do
@@ -41,7 +41,7 @@ class AnimalProfile < HyperComponent
       CollapsePanel(collapse: true, heading_text: 'Images', heading_tag: :H4) do
         DIV(class: :catalogue) do
           animal.image_files.each do |image|
-            IMG(src: image)
+            IMG(class: 'image-file', src: image)
           end
         end
       end unless animal.image_files.empty?
@@ -50,7 +50,7 @@ class AnimalProfile < HyperComponent
         DIV(class: :catalogue) do
           animal.records.each do |record|
             Panel(heading_tag: :H5, heading_text: "[#{record.record_type}] #{record.title}") do
-              IMG(src: record.image_file)
+              IMG(class: 'image-file', src: record.image_file)
             end
           end
         end

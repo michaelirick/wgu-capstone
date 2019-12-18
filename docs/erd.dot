@@ -39,8 +39,8 @@ m_Record [label = <<table border="0" align="center" cellspacing="0.5" cellpaddin
   <tr><td align="left" width="130" port="title">title <font face="Arial Italic" color="grey60">string ∗</font></td></tr>
 </table>
 >];
-  m_Animal -> m_Animal [arrowhead = "normal", arrowtail = "none", weight = "4"];
-  m_Breed -> m_Animal [arrowhead = "normal", arrowtail = "none", weight = "1"];
   m_Animal -> m_Record [arrowhead = "normal", arrowtail = "none", weight = "2"];
   m_Breed -> m_Breed [arrowhead = "normal", arrowtail = "none", weight = "1"];
+  m_Animal -> m_Animal [arrowhead = "normal", arrowtail = "none", weight = "4"];
+  m_Breed -> m_Animal [arrowhead = "normal", arrowtail = "none", weight = "1"];
 }
