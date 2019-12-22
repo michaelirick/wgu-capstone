@@ -7,12 +7,15 @@ curl -sL https://deb.nodesource.com/setup_13.x | -E bash -
 
 # install prerequisite libraries
 apt-get -y update
-apt-get -y install autoconf bison build-essential libssl-dev libyaml-dev libreadline6-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm5 libgdbm-dev git nodejs yarn postgresql libpq-dev libxml2 libxml2-dev libxslt1-dev libncurses5-dev
+apt-get -y install autoconf bison build-essential gcc libssl-dev libyaml-dev libreadline6-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm5 libgdbm-dev git nodejs yarn postgresql libpq-dev libxml2 libxml2-dev libxslt1-dev libncurses5-dev
 
 # install ruby
 git clone https://github.com/rbenv/rbenv.git ~/.rbenv
 echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
-~/.rbenv/bin/rbenv init
+echo 'eval "$(rbenv init -)"' >> ~/.bashrc
+export PATH="$HOME/.rbenv/bin:$PATH"
+export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
+eval "$(rbenv init -)"
 mkdir -p "$(rbenv root)"/plugins
 git clone https://github.com/rbenv/ruby-build.git "$(rbenv root)"/plugins/ruby-build
 rbenv rehash
@@ -25,6 +28,7 @@ gem install bundler
 cat << EOF | su - postgres -c psql
 CREATE ROLE vagrant WITH PASSWORD 'password' LOGIN SUPERUSER;
 EOF
+cd /vagrant
 rm config/database.yml
 cp config/database.yml.example config/database.yml
 
