@@ -1,7 +1,7 @@
 default: &default
   adapter: postgresql
-  host:
-  username: miker
+  host: localhost
+  username: vagrant
   password: password
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   timeout: 5000
@@ -16,7 +16,6 @@ development:
 test:
   <<: *default
   password: password
-  database: christies_test
 
 production:
   <<: *default
