@@ -24,7 +24,7 @@ cat << EOF | sudo su - postgres -c psql
 CREATE ROLE vagrant WITH PASSWORD 'password' LOGIN SUPERUSER;
 EOF
 
-# test
+# test postgres
 PGPASSWORDS=password psql -U vagrant postgres -c "\\l"
 
 # install ruby
@@ -43,11 +43,17 @@ rbenv rehash
 rbenv global 2.4.1
 gem install bundler
 
+# test yarn/webpack
+cd /vagrant
+yarn install --no-bin-links
+bin/webpack
+exit 1
+
 # setup rails
 cd /vagrant
 rm config/database.yml
 cp config/database.yml.example config/database.yml
-yarn install
+yarn install --no-bin-links
 bundle install
 migrate=1 bundle exec rails db:create
 migrate=1 bundle exec rails db:migrate db:seed
