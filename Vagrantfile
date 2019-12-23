@@ -14,4 +14,7 @@ Vagrant.configure("2") do |config|
     v.memory = ENV.fetch('CC_RAM', 2048).to_i
     v.cpus   = ENV.fetch('CC_CPU', 2).to_i
   end
+  config.vm.provider "virtualbox" do |v|
+    v.customize ["setextradata", :id, "VBoxInternal2/SharedFoldersEnableSymlinksCreate/vagrant", "1"]
+  end
 end
