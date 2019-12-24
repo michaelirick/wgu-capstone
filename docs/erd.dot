@@ -18,8 +18,11 @@ m_Animal [label = <<table border="0" align="center" cellspacing="0.5" cellpaddin
 </table>
 |
 <table border="0" align="left" cellspacing="2" cellpadding="0" width="134">
+  <tr><td align="left" width="130" port="breed_id">breed_id <font face="Arial Italic" color="grey60">integer FK</font></td></tr>
+  <tr><td align="left" width="130" port="dam_id">dam_id <font face="Arial Italic" color="grey60">integer FK</font></td></tr>
   <tr><td align="left" width="130" port="name">name <font face="Arial Italic" color="grey60">string ∗</font></td></tr>
   <tr><td align="left" width="130" port="sex">sex <font face="Arial Italic" color="grey60">string ∗</font></td></tr>
+  <tr><td align="left" width="130" port="sire_id">sire_id <font face="Arial Italic" color="grey60">integer FK</font></td></tr>
 </table>
 >];
 m_Breed [label = <<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
@@ -28,6 +31,7 @@ m_Breed [label = <<table border="0" align="center" cellspacing="0.5" cellpadding
 |
 <table border="0" align="left" cellspacing="2" cellpadding="0" width="134">
   <tr><td align="left" width="130" port="name">name <font face="Arial Italic" color="grey60">string ∗</font></td></tr>
+  <tr><td align="left" width="130" port="parent_id">parent_id <font face="Arial Italic" color="grey60">integer FK</font></td></tr>
 </table>
 >];
 m_Record [label = <<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
@@ -35,6 +39,7 @@ m_Record [label = <<table border="0" align="center" cellspacing="0.5" cellpaddin
 </table>
 |
 <table border="0" align="left" cellspacing="2" cellpadding="0" width="134">
+  <tr><td align="left" width="130" port="animal_id">animal_id <font face="Arial Italic" color="grey60">integer FK</font></td></tr>
   <tr><td align="left" width="130" port="record_type">record_type <font face="Arial Italic" color="grey60">string</font></td></tr>
   <tr><td align="left" width="130" port="title">title <font face="Arial Italic" color="grey60">string ∗</font></td></tr>
 </table>

@@ -1,3 +1,7 @@
+attributes:
+  - content
+  - foreign_key
+  - inheritance
 orientation: vertical
 disconnected: false
 filename: docs/erd
